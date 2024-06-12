@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo do Dia dos Namorados</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #ffc0cb; /* cor de fundo rosa */
+        text-align: center;
+        padding-top: 50px;
+      }
+      .botao {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #nao {
+        position: absolute;
+        transition: top 0.5s, left 0.5s; /* suaviza a movimentação do botão */
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Quem é a minha namorada totosa, lindona, princesa tomate, fã de jogos
+      vorazes, leitora, designer, guerreira, jogadora, morena, baixinha e amante
+      da moda coquette?
+    </h2>
+    <button class="botao" id="sim">Sou eu, Bia, su amor!</button>
+    <button id="nao" class="botao">Não sou eu >:c</button>
+
+    <script>
+      document.getElementById("sim").onclick = function () {
+        alert("Eu sabia que era, você! 💖 E toma essa pedrada");
+        window.location.href = "https://www.youtube.com/watch?v=nDUQ-MvnO6s"; // Substitua URL_DO_VIDEO pelo link do vídeo
+      };
+
+      document.getElementById("nao").onmouseover = function (event) {
+        var naoBtn = event.target;
+        var minX = window.innerWidth / 4;
+        var maxX = (window.innerWidth * 3) / 4 - naoBtn.clientWidth;
+        var minY = window.innerHeight / 4;
+        var maxY = (window.innerHeight * 3) / 4 - naoBtn.clientHeight;
+
+        var x = Math.random() * (maxX - minX) + minX;
+        var y = Math.random() * (maxY - minY) + minY;
+
+        naoBtn.style.left = x + "px";
+        naoBtn.style.top = y + "px";
+      };
+    </script>
+  </body>
+</html>
